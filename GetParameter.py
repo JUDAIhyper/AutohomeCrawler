@@ -42,6 +42,7 @@ class Car_Config(object):
     #通过下载链接下载表格文件
     def downloadExcel(self,url,path,filename):
         r=urlopen(url)
+        #配置表文件类型不同，先拿到类型再拼接
         filetype=os.path.basename(url).split('.')[2]
         file=path+filename+"."+str(filetype)
         with open(file,"wb") as code:
